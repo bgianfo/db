@@ -392,19 +392,19 @@ INSERT INTO Staff (staffNo, lastName, firstName, dob, gender, street, city, post
 -- -----------------------------------------------------------------------------
 -- ------------------- PORTED HOR RECORDS ------------------
 -- -----------------------------------------------------------------------------
-INSERT INTO HOR (name, addr, telNo, managedBy) VALUES ("Grace Hall", "12 Campus Way", "123-456-7001", 'R5055');
-INSERT INTO HOR (name, addr, telNo, managedBy) VALUES ("White Hall", "14 Campus Way", "123-456-7201", 'R5055');
-INSERT INTO HOR (name, addr, telNo, managedBy) VALUES ("Anderson Hall", "16 Campus Way", "123-456-7401", 'R4223');
-INSERT INTO HOR (name, addr, telNo, managedBy) VALUES ("Sandson Hall", "18 Campus Way", "123-456-7601", 'R5062');
+INSERT INTO HOR (name, addr, telNo, managedBy) VALUES ('Grace Hall', '12 Campus Way', '123-456-7001', 'R5055');
+INSERT INTO HOR (name, addr, telNo, managedBy) VALUES ('White Hall', '14 Campus Way', '123-456-7201', 'R5055');
+INSERT INTO HOR (name, addr, telNo, managedBy) VALUES ('Anderson Hall', '16 Campus Way', '123-456-7401', 'R4223');
+INSERT INTO HOR (name, addr, telNo, managedBy) VALUES ('Sandson Hall', '18 Campus Way', '123-456-7601', 'R5062');
 
 -- -----------------------------------------------------------------------------
 -- ------------------- PORTED FLATS RECORDS ------------------
 -- -----------------------------------------------------------------------------
-INSERT INTO FLAT(aptNo, addr) VALUES (1, "110 Flat Rd.");
-INSERT INTO FLAT(aptNo, addr) VALUES (2, "120 Flat Rd.");
-INSERT INTO FLAT(aptNo, addr) VALUES (3, "130 Flat Rd.");
-INSERT INTO FLAT(aptNo, addr) VALUES (4, "140 Flat Rd.");
-INSERT INTO FLAT(aptNo, addr) VALUES (5, "150 Flat Rd.");
-INSERT INTO FLAT(aptNo, addr) VALUES (6, "160 Flat Rd.");
-INSERT INTO FLAT(aptNo, addr) VALUES (7, "170 Flat Rd.");
-INSERT INTO FLAT(aptNo, addr) VALUES (null, "180 Flat Rd.");
+INSERT INTO FLAT(aptNo, addr) VALUES (1, '110 Flat Rd.');
+INSERT INTO FLAT(aptNo, addr) VALUES (2, '120 Flat Rd.');
+INSERT INTO FLAT(aptNo, addr) VALUES (3, '130 Flat Rd.');
+INSERT INTO FLAT(aptNo, addr) VALUES (4, '140 Flat Rd.');
+INSERT INTO FLAT(aptNo, addr) VALUES (5, '150 Flat Rd.');
+INSERT INTO FLAT(aptNo, addr) VALUES (6, '160 Flat Rd.');
+INSERT INTO FLAT(aptNo, addr) VALUES (7, '170 Flat Rd.');
+INSERT INTO FLAT(aptNo, addr) VALUES (null, '180 Flat Rd.');
