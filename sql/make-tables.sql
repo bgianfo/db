@@ -71,7 +71,7 @@ CREATE TABLE Has_Next_Of_Kin (
 	CONSTRAINT fk_contact
 		FOREIGN KEY (name, contactTelNo) 
 		REFERENCES Next_Of_Kin(name, contactTelNo)
-		ON DELETE CASCADE
+		ON DELETE CASCADE,
 	CONSTRAINT fk_student
 		FOREIGN KEY (bannerNo) 
 		REFERENCES Student(bannerNo)
@@ -113,7 +113,7 @@ CREATE TABLE HOR (
 	name VARCHAR2(20) PRIMARY KEY,
 	addr VARCHAR2(50),
 	telNo VARCHAR2(12),
-	managedBy VARCHAR2(12)
+	managedBy VARCHAR2(12),
 	CONSTRAINT fk_managedBy
 		FOREIGN KEY (managedBy) 
 		REFERENCES Staff(email)
@@ -150,7 +150,7 @@ CREATE TABLE Leases (
 	CONSTRAINT fk_tenant
 		FOREIGN KEY (bannerNo) 
 		REFERENCES Student(bannerNo)
-		ON DELETE CASCADE
+		ON DELETE CASCADE,
 	CONSTRAINT fk_room_rented
 		FOREIGN KEY (placeNo) 
 		REFERENCES Room(placeNo)
@@ -160,7 +160,7 @@ CREATE TABLE Invoice (
 	invoiceNo NUMBER PRIMARY KEY,
 	leaseNo NUMBER,
 	semester NUMBER,
-	paymentDue DATE
+	paymentDue DATE,
 	CONSTRAINT fk_lease
 		FOREIGN KEY (leaseNo) 
 		REFERENCES Lease(leaseNo)
@@ -190,7 +190,7 @@ CREATE TABLE Takes (
 	CONSTRAINT fk_student_taking
 		FOREIGN KEY (bannerNo) 
 		REFERENCES Student(bannerNo)
-		ON DELETE CASCADE
+		ON DELETE CASCADE,
 	CONSTRAINT fk_course_taken
 		FOREIGN KEY (courseNo) 
 		REFERENCES Course(courseNo)
