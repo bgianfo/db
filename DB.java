@@ -78,15 +78,16 @@ public class DB {
  	  Statement stmt = this.con.createStatement();
 	  if ( cmd.contains("categoryTotals") ) {
 
-	     String types[] = { "Undergrad", "Grad", "Postgrad" };
-	     for( String type : types ) {
-	       query = "SELECT COUNT(*) AS \"number\" FROM Student WHERE category LIKE '" + type + "'";
+	     //String types[] = { "Undergrad", "Grad", "Postgrad" };
+	     //for( String type : types ) {
+	       query = "SELECT category, COUNT(*) AS \"number\" FROM Student " 
+		+ "GROUP BY category ORDER BY \"number\" DESC";
 	       rs = stmt.executeQuery( query );
 	       while ( rs.next() ) {
 	         int count = rs.getInt("number");
-	         System.out.println( type + "  " + count );
+	         System.out.println( rs.getString("category") + "  " + count );
 	       }
-	     }
+	     //}
 
    	  } else if ( cmd.contains("badApartments") ) {
 	      query = "SELECT aptNo " +
