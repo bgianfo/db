@@ -1,6 +1,7 @@
 DROP TABLE Student;
 DROP TABLE Advisor; 
-DROP TABLE NextOfKin; 
+DROP TABLE Next_Of_Kin; 
+DROP TABLE Has_Next_Of_Kin;
 
 CREATE TABLE Student (
 	bannerNo VARCHAR2(12) PRIMARY KEY,
@@ -8,6 +9,7 @@ CREATE TABLE Student (
 	firstName VARCHAR2(20),
 	middleName VARCHAR2(20),
 	dob DATE,
+	gender VARCHAR2(1),
 	street VARCHAR2(25),
 	city VARCHAR2(20),
 	postCode NUMBER(5,0),
@@ -47,3 +49,33 @@ CREATE TABLE Has_Next_Of_Kin (
 	bannerNo VARCHAR2(12) PRIMARY KEY,
 	relationship VARCHAR2(25)
 );
+
+CREATE TABLE Staff (
+	staffNo VARCHAR2(12) PRIMARY KEY,
+	lastName VARCHAR2(20),
+	firstName VARCHAR2(20),
+	dob DATE,
+	street VARCHAR2(25),
+	city VARCHAR2(20),
+	postCode NUMBER(5,0),
+	email VARCHAR2(50),
+	position VARCHAR2(30),
+	location VARCHAR2(30),
+	gender VARCHAR2(1)
+);
+
+CREATE TABLE Instructor (
+	lastName VARCHAR2(20),
+	firstName VARCHAR2(20),
+	middleName VARCHAR2(20),
+	email VARCHAR2(50) PRIMARY KEY,
+	campusTelNo VARCHAR2(12),
+	dept VARCHAR2(12)
+);
+
+CREATE TABLE Course (
+	courseNo VARCHAR2(20) PRIMARY KEY,
+	courseTitle VARCHAR2(35),
+	instructor VARCHAR2(50)
+);
+
