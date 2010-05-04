@@ -116,7 +116,7 @@ CREATE TABLE HOR (
 	managedBy VARCHAR2(12),
 	CONSTRAINT fk_managedBy
 		FOREIGN KEY (managedBy) 
-		REFERENCES Staff(email)
+		REFERENCES Staff(staffNo)
 );
 
 CREATE TABLE Flat (
