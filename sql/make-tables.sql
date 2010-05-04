@@ -136,7 +136,7 @@ CREATE TABLE Inspects (
 	staffNo VARCHAR2(12),
 	dateOfInspection NUMBER,
 	result VARCHAR2(10),
-	comments CBLOB,
+	comments CLOB,
 	PRIMARY KEY (aptNo, staffNo, dateOfInspection)
 );
 
