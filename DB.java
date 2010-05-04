@@ -1,6 +1,7 @@
 /** 
- * Crud.java - first cut at Oracle 9i version
- * This program illustrates database CRUD operations.
+ * 
+ * University database query program.
+ * 
  * @author Brian Gianforcaro 
  * @author Nicholas Williams
  * @author David Erberhart
@@ -78,45 +79,44 @@ public class DB {
  	  Statement stmt = this.con.createStatement();
 	  if ( cmd.contains("categoryTotals") ) {
 
-	     //String types[] = { "Undergrad", "Grad", "Postgrad" };
-	     //for( String type : types ) {
 	       query = "SELECT category, COUNT(*) AS \"number\" FROM Student " 
 		+ "GROUP BY category ORDER BY \"number\" DESC";
 	       rs = stmt.executeQuery( query );
 	       while ( rs.next() ) {
 	         int count = rs.getInt("number");
-	         System.out.println( rs.getString("category") + "  " + count );
+	         System.out.println( rs.getString("category") + "\t" + count );
 	       }
-	     //}
 
    	  } else if ( cmd.contains("badApartments") ) {
 	      query = "SELECT aptNo " +
    	              "FROM Inspects WHERE result LIKE '%fail%'";
 
-              System.out.println(" Apartment Number | Banner Number | Student Name ");
+              System.out.println(" Apartment No\t| Banner Number\t| Student Name ");
               System.out.println("-------------------------------------------------------------------");
 
 	      rs = stmt.executeQuery( query );
 	      while ( rs.next() ) {
 		 int aptNo = rs.getInt("aptNo");
-		 query = "SELECT Leases.bannerNo AS \"bannerNo\" " +
-			 "FROM Leases, Room WHERE " +
-			 "Room.aptNo = " + aptNo + " AND Room.placeNo = Leases.placeNo" ;
-	         ResultSet rs2 = stmt.executeQuery( query );
-		 rs2.next();
-		 String bannerNo = rs2.getString("bannerNo");
- 		 query = "SELECT lastName, firstName, middleName " +
-		         "FROM Student WHERE bannerNo LIKE '" + bannerNo +"'";
-
-	         ResultSet rs3 = stmt.executeQuery( query );
-
-		 rs3.next();
-	         String last = rs3.getString("lastName");
-	         String first = rs3.getString("firstName");
-	         String middl = rs3.getString("middleName");
-	         System.out.println( aptNo + " |  " + bannerNo + " | " + first + " " + middl + " " + last );
+		 query = "SELECT Leases.bannerNo AS \"bannerNo\", lastName, firstName, middleName " +
+			 "FROM Leases, Room, Student WHERE " +
+			 "Room.aptNo = " + aptNo + " AND Room.placeNo = Leases.placeNo " +
+			 "AND Leases.bannerNo = Student.bannerNo" ;
+		 Statement stmt2 = this.con.createStatement();
+	         ResultSet rs2 = stmt2.executeQuery( query );
+		 boolean firstr = true;
+		 while(rs2.next()) {
+			 String bannerNo = rs2.getString("bannerNo");
+	        	 String last = rs2.getString("lastName");
+		         String first = rs2.getString("firstName");
+		         String middl = rs2.getString("middleName");
+		         System.out.println( (firstr?"\t"+aptNo:"\t") + "\t|  " + bannerNo + "\t| " + first +
+			 	" " + middl + " " + last );
+			 firstr=false;
+		}
+		rs2.close();
+		stmt2.close();
 	      }
-
+	      rs.close();
 	  } else if ( cmd.contains("rentStats") ) {
 
 	      query = "SELECT MIN(rentRate) AS \"min\" " +
@@ -126,7 +126,7 @@ public class DB {
 	      rs = stmt.executeQuery( query );
 	      rs.next();
 	      int min = rs.getInt("min");
-	      System.out.println( "Min Rent: " + min );
+	      System.out.println( "Min Rent: $ " + min );
 
 	      query = "SELECT MAX(rentRate) AS \"max\" " +
 	  	      "FROM Room WHERE horName IS NOT NULL AND " +
@@ -134,7 +134,7 @@ public class DB {
 	      rs = stmt.executeQuery( query );
 	      rs.next();
 	      int max = rs.getInt("max");
-	      System.out.println( "Max Rent: " + max );
+	      System.out.println( "Max Rent: $ " + max );
 
 	      query = "SELECT AVG(rentRate) AS \"avg\" " +
  	 	      "FROM Room WHERE horName IS NOT NULL AND " +
@@ -142,7 +142,7 @@ public class DB {
 	      rs = stmt.executeQuery( query );
 	      rs.next();
 	      int avg = rs.getInt("avg");
-	      System.out.println( "Average Rent: " + avg );
+	      System.out.println( "Avg Rent: $ " + avg );
 
    	  } else if ( cmd.contains("noKin") ) {
 
@@ -212,11 +212,12 @@ public class DB {
 		   System.out.println( "  rentStats - Display the min, max and average monthly rent for rooms in residence halls.\n" );
 		   System.out.println( "  noKin - List all students who have not supplied details of their next-of-kin.\n" );
 		   System.out.println( "  awaitingAccommodations- List details of students currently on the waiting list for accommodations. \n"); 
-     		   System.out.println( "  badApartments - Display  apartments where the property was found to be in unsatisfactory condition.\n"); 
+     		   System.out.println( "  badApartments - Display  apartments where the property was found to be in unsatisfactory condition."); 
  
 		} else {
 		   System.out.println( "Unknown Command" );
 		}
+		System.out.println();
 	    }
 	    runner.close();
 	}
