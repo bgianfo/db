@@ -672,27 +672,10 @@ INSERT INTO Invoice (leaseNo, semester, paymentDue) VALUES (89, 1, to_date('2010
 -- -----------------------------------------------------------------------------
 -- ----------------- PORTED INSPECTION RECORDS --------------
 -- -----------------------------------------------------------------------------
-INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (80, 'R9211', to_date('2010-10-7', 'yyyy-mm-dd'), 'fail');
-INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (81, 'R8020', to_date('2010-10-2', 'yyyy-mm-dd'), 'fail');
-INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (82, 'R7004', to_date('2010-10-2', 'yyyy-mm-dd'), 'pass');
-INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (84, 'R5055', to_date('2010-10-18', 'yyyy-mm-dd'), 'pass');
-INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (85, 'R6097', to_date('2010-10-24', 'yyyy-mm-dd'), 'pass');
-INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (86, 'R5955', to_date('2010-10-1', 'yyyy-mm-dd'), 'pass');
-INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (87, 'R6097', to_date('2010-10-18', 'yyyy-mm-dd'), 'pass');
-INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (89, 'R2751', to_date('2010-10-8', 'yyyy-mm-dd'), 'fail');
-INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (90, 'R3972', to_date('2010-10-30', 'yyyy-mm-dd'), 'pass');
-INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (91, 'R3672', to_date('2010-10-18', 'yyyy-mm-dd'), 'pass');
-INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (92, 'R5055', to_date('2010-10-1', 'yyyy-mm-dd'), 'fail');
-INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (94, 'R4551', to_date('2010-10-25', 'yyyy-mm-dd'), 'fail');
-INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (95, 'R5955', to_date('2010-10-9', 'yyyy-mm-dd'), 'pass');
-INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (96, 'R8515', to_date('2010-10-8', 'yyyy-mm-dd'), 'pass');
-INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (97, 'R4551', to_date('2010-10-14', 'yyyy-mm-dd'), 'fail');
-INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (98, 'R5062', to_date('2010-10-5', 'yyyy-mm-dd'), 'fail');
-INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (99, 'R3284', to_date('2010-10-3', 'yyyy-mm-dd'), 'pass');
-INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (100, 'R4551', to_date('2010-10-27', 'yyyy-mm-dd'), 'pass');
-INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (101, 'R4310', to_date('2010-10-9', 'yyyy-mm-dd'), 'pass');
-INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (102, 'R4310', to_date('2010-10-5', 'yyyy-mm-dd'), 'pass');
-INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (103, 'R2751', to_date('2010-10-4', 'yyyy-mm-dd'), 'pass');
-INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (104, 'R5062', to_date('2010-10-10', 'yyyy-mm-dd'), 'pass');
-INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (105, 'R6097', to_date('2010-10-8', 'yyyy-mm-dd'), 'pass');
-INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (106, 'R3972', to_date('2010-10-20', 'yyyy-mm-dd'), 'fail');
+INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (1, 'R2751', to_date('2010-10-21', 'yyyy-mm-dd'), 'pass');
+INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (2, 'R5711', to_date('2010-10-7', 'yyyy-mm-dd'), 'pass');
+INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (3, 'R4551', to_date('2010-10-3', 'yyyy-mm-dd'), 'fail');
+INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (4, 'R9028', to_date('2010-10-16', 'yyyy-mm-dd'), 'fail');
+INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (5, 'R4223', to_date('2010-10-2', 'yyyy-mm-dd'), 'pass');
+INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (6, 'R2751', to_date('2010-10-29', 'yyyy-mm-dd'), 'pass');
+INSERT INTO Inspects (aptNo, staffNo, dateOfInspection, result) VALUES (7, 'R5062', to_date('2010-10-23', 'yyyy-mm-dd'), 'pass');
