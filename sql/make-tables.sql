@@ -221,3 +221,5 @@ BEFORE INSERT ON invoice REFERENCING NEW AS NEW
 		SELECT invoice_numbers.nextval INTO :NEW.invoiceNo FROM dual;
 	END;
 /
+
+exit
