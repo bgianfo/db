@@ -50,7 +50,9 @@ CREATE TABLE Student (
 	advisorEmail VARCHAR2(30) NOT NULL,
 	CONSTRAINT fk_advisor
 		FOREIGN KEY (advisorEmail) 
-		REFERENCES Advisor(email)
+		REFERENCES Advisor(email),
+	CONSTRAINT check_gender
+		CHECK (gender IS NULL OR gender IN ('M', 'F') )
 );
 
 CREATE TABLE Next_Of_Kin (
@@ -88,7 +90,9 @@ CREATE TABLE Staff (
 	email VARCHAR2(50),
 	position VARCHAR2(30),
 	location VARCHAR2(30),
-	gender VARCHAR2(1)
+	gender VARCHAR2(1),
+	CONSTRAINT check_gender
+		CHECK (gender IS NULL OR gender IN ('M', 'F') )
 );
 
 CREATE TABLE Instructor (
