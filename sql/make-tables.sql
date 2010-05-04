@@ -60,7 +60,7 @@ CREATE TABLE Next_Of_Kin (
 	contactTelNo VARCHAR2(12) NOT NULL,
 	city VARCHAR2(20),
 	street VARCHAR2(25),
-	postCode NUMBER(1,5),
+	postCode NUMBER(5,0),
 	PRIMARY KEY (name, contactTelNo)
 );
 
