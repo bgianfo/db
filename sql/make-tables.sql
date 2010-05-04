@@ -1,19 +1,24 @@
-
 DROP TABLE Student;
 DROP TABLE Advisor; 
 DROP TABLE NextOfKin; 
 
 CREATE TABLE Student (
 	bannerNo VARCHAR2(20) PRIMARY KEY,
-	city VARCHAR2(20),
+	lastName VARCHAR(30),
+	firstName VARCHAR(30),
+	middleName VARCHAR(30),
+	dob DATE,
 	street VARCHAR2(25),
+	city VARCHAR2(20),
 	postCode NUMBER(1,5),
-	email VARCHAR2(20),
+	email VARCHAR2(30),
 	mobilePhone VARCHAR2(12),
-	name VARCHAR2(50),
 	major VARCHAR2(50),
 	minor VARCHAR2(50),
-	dob DATE
+	category VARCHAR2(20),
+	nationality VARCHAR2(20),
+	specialNeeds CLOB, 
+	comments CLOB
 );
 
 
