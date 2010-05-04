@@ -490,7 +490,6 @@ INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (76, 2450, 'Sand
 INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (77, 2450, 'Sandson Hall', 217);
 INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (78, 2450, 'Sandson Hall', 218);
 INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (79, 2450, 'Sandson Hall', 219);
-INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (80, 2450, 'Sandson Hall', 220);
 -- %%%%%%%% APT BEDROOMS %%%%%%% --
 INSERT INTO Room (placeNo, rentRate, aptNo) VALUES (80, 2800, 1);
 INSERT INTO Room (placeNo, rentRate, aptNo) VALUES (81, 2800, 1);
