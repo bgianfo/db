@@ -393,12 +393,11 @@ INSERT INTO Staff (staffNo, lastName, firstName, dob, gender, street, city, post
 -- ------------------- PORTED HOR RECORDS ------------------
 -- -----------------------------------------------------------------------------
 INSERT INTO HOR (name, addr, telNo, managedBy) VALUES ('Grace Hall', '12 Campus Way', '123-456-7001', 'R5055');
-INSERT INTO HOR (name, addr, telNo, managedBy) VALUES ('White Hall', '14 Campus Way', '123-456-7201', 'R5055');
 INSERT INTO HOR (name, addr, telNo, managedBy) VALUES ('Anderson Hall', '16 Campus Way', '123-456-7401', 'R4223');
 INSERT INTO HOR (name, addr, telNo, managedBy) VALUES ('Sandson Hall', '18 Campus Way', '123-456-7601', 'R5062');
 
 -- -----------------------------------------------------------------------------
--- ------------------- PORTED FLATS RECORDS ------------------
+-- ------------------ PORTED FLATS RECORDS ----------------
 -- -----------------------------------------------------------------------------
 INSERT INTO FLAT(aptNo, addr) VALUES (1, '110 Flat Rd.');
 INSERT INTO FLAT(aptNo, addr) VALUES (2, '120 Flat Rd.');
@@ -407,4 +406,117 @@ INSERT INTO FLAT(aptNo, addr) VALUES (4, '140 Flat Rd.');
 INSERT INTO FLAT(aptNo, addr) VALUES (5, '150 Flat Rd.');
 INSERT INTO FLAT(aptNo, addr) VALUES (6, '160 Flat Rd.');
 INSERT INTO FLAT(aptNo, addr) VALUES (7, '170 Flat Rd.');
-INSERT INTO FLAT(aptNo, addr) VALUES (null, '180 Flat Rd.');
+
+-- -----------------------------------------------------------------------------
+-- ------------------ PORTED ROOM RECORDS ----------------
+-- -----------------------------------------------------------------------------
+-- %%%%%%%% DORM ROOMS %%%%%%% --
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (1, 2200, 'Grace Hall', 101);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (2, 2200, 'Grace Hall', 102);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (3, 2200, 'Grace Hall', 103);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (4, 2200, 'Grace Hall', 104);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (5, 2200, 'Grace Hall', 105);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (6, 2200, 'Grace Hall', 106);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (7, 2200, 'Grace Hall', 107);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (8, 2200, 'Grace Hall', 108);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (9, 2200, 'Grace Hall', 109);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (10, 2200, 'Grace Hall', 110);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (11, 2200, 'Grace Hall', 111);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (12, 2200, 'Grace Hall', 112);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (13, 2200, 'Grace Hall', 113);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (14, 2200, 'Grace Hall', 114);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (15, 2200, 'Grace Hall', 115);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (16, 2200, 'Grace Hall', 116);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (17, 2200, 'Grace Hall', 117);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (18, 2200, 'Grace Hall', 118);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (19, 2200, 'Grace Hall', 119);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (20, 2200, 'Grace Hall', 120);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (21, 2200, 'Grace Hall', 121);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (22, 2200, 'Grace Hall', 122);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (23, 2200, 'Grace Hall', 123);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (24, 2400, 'Anderson Hall', 101);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (25, 2400, 'Anderson Hall', 102);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (26, 2400, 'Anderson Hall', 103);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (27, 2400, 'Anderson Hall', 104);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (28, 2400, 'Anderson Hall', 105);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (29, 2400, 'Anderson Hall', 106);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (30, 2400, 'Anderson Hall', 107);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (31, 2400, 'Anderson Hall', 108);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (32, 2400, 'Anderson Hall', 109);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (33, 2400, 'Anderson Hall', 110);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (34, 2400, 'Anderson Hall', 111);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (35, 2400, 'Anderson Hall', 112);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (36, 2400, 'Anderson Hall', 113);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (37, 2400, 'Anderson Hall', 114);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (38, 2400, 'Anderson Hall', 115);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (39, 2400, 'Anderson Hall', 116);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (40, 2400, 'Anderson Hall', 117);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (41, 2400, 'Anderson Hall', 118);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (42, 2350, 'Sandson Hall', 101);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (43, 2350, 'Sandson Hall', 102);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (44, 2350, 'Sandson Hall', 103);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (45, 2350, 'Sandson Hall', 104);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (46, 2350, 'Sandson Hall', 105);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (47, 2350, 'Sandson Hall', 106);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (48, 2350, 'Sandson Hall', 107);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (49, 2350, 'Sandson Hall', 108);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (50, 2350, 'Sandson Hall', 109);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (51, 2350, 'Sandson Hall', 110);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (52, 2350, 'Sandson Hall', 111);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (53, 2350, 'Sandson Hall', 112);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (54, 2350, 'Sandson Hall', 113);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (55, 2350, 'Sandson Hall', 114);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (56, 2350, 'Sandson Hall', 115);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (57, 2350, 'Sandson Hall', 116);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (58, 2350, 'Sandson Hall', 117);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (59, 2350, 'Sandson Hall', 118);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (60, 2350, 'Sandson Hall', 119);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (61, 2450, 'Sandson Hall', 201);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (62, 2450, 'Sandson Hall', 202);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (63, 2450, 'Sandson Hall', 203);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (64, 2450, 'Sandson Hall', 204);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (65, 2450, 'Sandson Hall', 205);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (66, 2450, 'Sandson Hall', 206);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (67, 2450, 'Sandson Hall', 207);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (68, 2450, 'Sandson Hall', 208);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (69, 2450, 'Sandson Hall', 209);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (70, 2450, 'Sandson Hall', 210);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (71, 2450, 'Sandson Hall', 211);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (72, 2450, 'Sandson Hall', 212);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (73, 2450, 'Sandson Hall', 213);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (74, 2450, 'Sandson Hall', 214);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (75, 2450, 'Sandson Hall', 215);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (76, 2450, 'Sandson Hall', 216);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (77, 2450, 'Sandson Hall', 217);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (78, 2450, 'Sandson Hall', 218);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (79, 2450, 'Sandson Hall', 219);
+INSERT INTO Room (placeNo, rentRate, horName, horRoomNo) VALUES (80, 2450, 'Sandson Hall', 220);
+-- %%%%%%%% APT BEDROOMS %%%%%%% --
+INSERT INTO Room (placeNo, rentRate, aptNo) VALUES (80, 2800, 1);
+INSERT INTO Room (placeNo, rentRate, aptNo) VALUES (81, 2800, 1);
+INSERT INTO Room (placeNo, rentRate, aptNo) VALUES (82, 2800, 1);
+INSERT INTO Room (placeNo, rentRate, aptNo) VALUES (83, 2800, 1);
+INSERT INTO Room (placeNo, rentRate, aptNo) VALUES (84, 2800, 2);
+INSERT INTO Room (placeNo, rentRate, aptNo) VALUES (85, 2800, 2);
+INSERT INTO Room (placeNo, rentRate, aptNo) VALUES (86, 2800, 2);
+INSERT INTO Room (placeNo, rentRate, aptNo) VALUES (87, 2800, 2);
+INSERT INTO Room (placeNo, rentRate, aptNo) VALUES (88, 2800, 3);
+INSERT INTO Room (placeNo, rentRate, aptNo) VALUES (89, 2800, 3);
+INSERT INTO Room (placeNo, rentRate, aptNo) VALUES (90, 2800, 3);
+INSERT INTO Room (placeNo, rentRate, aptNo) VALUES (91, 2800, 3);
+INSERT INTO Room (placeNo, rentRate, aptNo) VALUES (92, 2800, 4);
+INSERT INTO Room (placeNo, rentRate, aptNo) VALUES (93, 2800, 4);
+INSERT INTO Room (placeNo, rentRate, aptNo) VALUES (94, 2800, 4);
+INSERT INTO Room (placeNo, rentRate, aptNo) VALUES (95, 2800, 4);
+INSERT INTO Room (placeNo, rentRate, aptNo) VALUES (96, 2800, 5);
+INSERT INTO Room (placeNo, rentRate, aptNo) VALUES (97, 2800, 5);
+INSERT INTO Room (placeNo, rentRate, aptNo) VALUES (98, 2800, 5);
+INSERT INTO Room (placeNo, rentRate, aptNo) VALUES (99, 2800, 5);
+INSERT INTO Room (placeNo, rentRate, aptNo) VALUES (100, 2800, 6);
+INSERT INTO Room (placeNo, rentRate, aptNo) VALUES (101, 2800, 6);
+INSERT INTO Room (placeNo, rentRate, aptNo) VALUES (102, 2800, 6);
+INSERT INTO Room (placeNo, rentRate, aptNo) VALUES (103, 2800, 6);
+INSERT INTO Room (placeNo, rentRate, aptNo) VALUES (104, 2800, 7);
+INSERT INTO Room (placeNo, rentRate, aptNo) VALUES (105, 2800, 7);
+INSERT INTO Room (placeNo, rentRate, aptNo) VALUES (106, 2800, 7);
+INSERT INTO Room (placeNo, rentRate, aptNo) VALUES (107, 2800, 7);
