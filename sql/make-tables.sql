@@ -2,6 +2,21 @@ DROP TABLE Student;
 DROP TABLE Advisor; 
 DROP TABLE Next_Of_Kin; 
 DROP TABLE Has_Next_Of_Kin;
+DROP TABLE Staff;
+DROP TABLE Instructor;
+DROP TABLE Course;
+DROP TABLE HOR;
+DROP TABLE Flat;
+DROP TABLE Room;
+DROP TABLE Invoice;
+DROP TABLE Leases;
+DROP TABLE Inspects;
+DROP TABLE Takes;
+DROP SEQUENCE lease_numbers;
+DROP SEQUENCE invoice_numbers;
+
+CREATE SEQUENCE lease_numbers START WITH 1 INCREMENT BY 1;
+CREATE SEQUENCE invoice_numbers START WITH 1 INCREMENT BY 1;
 
 CREATE TABLE Student (
 	bannerNo VARCHAR2(12) PRIMARY KEY,
@@ -79,3 +94,35 @@ CREATE TABLE Course (
 	instructor VARCHAR2(50)
 );
 
+CREATE TABLE HOR (
+	name VARCHAR2(20) PRIMARY KEY,
+	addr VARCHAR2(50),
+	telNo VARCHAR2(12),
+	managedBy VARCHAR2(12)
+);
+
+CREATE TABLE Flat (
+	aptNo VARCHAR2(5) PRIMARY KEY,
+	addr VARCHAR2(50)
+);
+
+CREATE TABLE Room (
+	placeNo NUMBER(5,0) PRIMARY KEY,
+	rentRate NUMBER(4,2),
+	horName VARCHAR2(20) ,
+	horRoomNo NUMBER(4,0),
+	aptNo VARCHAR2(5)
+);
+
+CREATE TABLE Leases (
+	leaseNo NUMBER PRIMARY KEY,
+	duration NUMBER,
+	moveInDate DATE,
+	moveOutDate DATE
+);
+
+CREATE OR REPLACE TRIGGER lease_number_trigger 
+BEFORE INSERT ON test REFERENCING NEW AS NEW
+FOR EACH ROW BEGIN
+	SELECT lease_number.nextval INTO :NEW.leaseNo FROM dual;
+END;
