@@ -51,7 +51,7 @@ CREATE TABLE Student (
 	CONSTRAINT fk_advisor
 		FOREIGN KEY (advisorEmail) 
 		REFERENCES Advisor(email)
-		ON DELETE RESTRICT
+		ON DELETE NO ACTION
 );
 
 CREATE TABLE Next_Of_Kin (
@@ -76,7 +76,7 @@ CREATE TABLE Has_Next_Of_Kin (
 	CONSTRAINT fk_student
 		FOREIGN KEY (bannerNo) 
 		REFERENCES Student(bannerNo)
-		ON DELETE RESTRICT
+		ON DELETE NO ACTION
 );
 
 CREATE TABLE Staff (
@@ -109,7 +109,7 @@ CREATE TABLE Course (
 	CONSTRAINT fk_instructor
 		FOREIGN KEY (instructor) 
 		REFERENCES Instructor(email)
-		ON DELETE RESTRICT
+		ON DELETE NO ACTION
 );
 
 CREATE TABLE HOR (
@@ -120,7 +120,7 @@ CREATE TABLE HOR (
 	CONSTRAINT fk_managedBy
 		FOREIGN KEY (managedBy) 
 		REFERENCES Staff(email)
-		ON DELETE RESTRICT
+		ON DELETE NO ACTION
 );
 
 CREATE TABLE Flat (
@@ -158,7 +158,7 @@ CREATE TABLE Leases (
 	CONSTRAINT fk_room_rented
 		FOREIGN KEY (placeNo) 
 		REFERENCES Room(placeNo)
-		ON DELETE RESTRICT
+		ON DELETE NO ACTION
 );
 
 CREATE TABLE Invoice (
@@ -182,7 +182,7 @@ CREATE TABLE Inspects (
 	CONSTRAINT fk_inspector
 		FOREIGN KEY (staffNo) 
 		REFERENCES Staff(staffNo)
-		ON DELETE RESTRICT,
+		ON DELETE NO ACTION,
 	CONSTRAINT fk_apt_inspected
 		FOREIGN KEY (aptNo) 
 		REFERENCES Flat(aptNo)
