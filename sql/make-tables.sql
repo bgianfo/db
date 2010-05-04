@@ -137,7 +137,9 @@ CREATE TABLE Room (
 	CONSTRAINT fk_flat
 		FOREIGN KEY (aptNo) 
 		REFERENCES Flat(aptNo)
-		ON DELETE CASCADE
+		ON DELETE CASCADE,
+	CONSTRAINT must_be_room_xor_flat
+		CHECK ( (horName IS NULL AND horRoomNo IS NULL) XOR (aptNo IS NULL) )
 );
 
 CREATE TABLE Leases (
