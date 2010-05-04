@@ -71,8 +71,7 @@ CREATE TABLE Has_Next_Of_Kin (
 	CONSTRAINT fk_contact
 		FOREIGN KEY (name, contactTelNo) 
 		REFERENCES Next_Of_Kin(name, contactTelNo)
-		ON DELETE CASCADE
-		ON UPDATE CASCADE,
+		ON DELETE CASCADE,
 	CONSTRAINT fk_student
 		FOREIGN KEY (bannerNo) 
 		REFERENCES Student(bannerNo)
@@ -108,7 +107,6 @@ CREATE TABLE Course (
 	CONSTRAINT fk_instructor
 		FOREIGN KEY (instructor) 
 		REFERENCES Instructor(email)
-		ON UPDATE CASCADE
 );
 
 CREATE TABLE HOR (
@@ -135,8 +133,7 @@ CREATE TABLE Room (
 	CONSTRAINT fk_hor
 		FOREIGN KEY (horName) 
 		REFERENCES HOR(name)
-		ON DELETE CASCADE
-		ON UPDATE CASCADE,
+		ON DELETE CASCADE,
 	CONSTRAINT fk_flat
 		FOREIGN KEY (aptNo) 
 		REFERENCES Flat(aptNo)
@@ -203,7 +200,6 @@ CREATE TABLE Takes (
 		FOREIGN KEY (courseNo) 
 		REFERENCES Course(courseNo)
 		ON DELETE CASCADE
-		ON UPDATE CASCADE
 );
 
 CREATE OR REPLACE TRIGGER lease_number_trigger 
