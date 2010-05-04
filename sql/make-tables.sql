@@ -10,7 +10,7 @@ CREATE TABLE Student (
 	dob DATE,
 	street VARCHAR2(25),
 	city VARCHAR2(20),
-	postCode NUMBER(1,5),
+	postCode NUMBER(5,0),
 	email VARCHAR2(30),
 	mobilePhone VARCHAR2(12),
 	major VARCHAR2(50),
