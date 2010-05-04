@@ -51,7 +51,7 @@ CREATE TABLE Student (
 	CONSTRAINT fk_advisor
 		FOREIGN KEY (advisorEmail) 
 		REFERENCES Advisor(email),
-	CONSTRAINT check_gender
+	CONSTRAINT check_student_gender
 		CHECK (gender IS NULL OR gender IN ('M', 'F') )
 );
 
@@ -91,7 +91,7 @@ CREATE TABLE Staff (
 	position VARCHAR2(30),
 	location VARCHAR2(30),
 	gender VARCHAR2(1),
-	CONSTRAINT check_gender
+	CONSTRAINT check_staff_gender
 		CHECK (gender IS NULL OR gender IN ('M', 'F') )
 );
 
