@@ -124,7 +124,8 @@ CREATE TABLE Leases (
 );
 
 CREATE OR REPLACE TRIGGER lease_number_trigger 
-BEFORE INSERT ON test REFERENCING NEW AS NEW
+BEFORE INSERT ON leases REFERENCING NEW AS NEW
 FOR EACH ROW BEGIN
-	SELECT lease_number.nextval INTO :NEW.leaseNo FROM dual;
+	SELECT lease_numbers.nextval INTO :NEW.leaseNo FROM dual;
 END;
+/
