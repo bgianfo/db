@@ -139,7 +139,10 @@ CREATE TABLE Room (
 		REFERENCES Flat(aptNo)
 		ON DELETE CASCADE,
 	CONSTRAINT must_be_room_xor_flat
-		CHECK ( (horName IS NULL AND horRoomNo IS NULL) XOR (aptNo IS NULL) )
+		CHECK ( 
+			(horName IS NULL AND horRoomNo IS NULL AND aptNo IS NOT NULL) OR 
+			(horName IS NOT NULL AND horRoomNo IS NOT NULL AND aptNo IS NULL) 
+		)
 );
 
 CREATE TABLE Leases (
