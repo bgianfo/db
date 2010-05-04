@@ -18,6 +18,17 @@ DROP SEQUENCE invoice_numbers;
 CREATE SEQUENCE lease_numbers START WITH 1 INCREMENT BY 1;
 CREATE SEQUENCE invoice_numbers START WITH 1 INCREMENT BY 1;
 
+CREATE TABLE Advisor (
+	email VARCHAR2(30) PRIMARY KEY,
+	lastName VARCHAR2(20),
+	firstName VARCHAR2(20),
+	middleName VARCHAR2(20),
+	position VARCHAR2(20),
+	department VARCHAR2(20),
+	extension VARCHAR2(6),
+	room VARCHAR2(8)
+);
+
 CREATE TABLE Student (
 	bannerNo VARCHAR2(12) PRIMARY KEY,
 	lastName VARCHAR2(20),
@@ -36,18 +47,11 @@ CREATE TABLE Student (
 	nationality VARCHAR2(20),
 	specialNeeds CLOB, 
 	comments CLOB,
-	advisorEmail VARCHAR2(30)
-);
-
-CREATE TABLE Advisor (
-	email VARCHAR2(30) PRIMARY KEY,
-	lastName VARCHAR2(20),
-	firstName VARCHAR2(20),
-	middleName VARCHAR2(20),
-	position VARCHAR2(20),
-	department VARCHAR2(20),
-	extension VARCHAR2(6),
-	room VARCHAR2(8)
+	advisorEmail VARCHAR2(30),
+	CONSTRAINT fk_advisor
+		FOREIGN KEY (advisorEmail) 
+		REFERENCES Advisor(email)
+		ON DELETE RESTRICT
 );
 
 CREATE TABLE Next_Of_Kin (
@@ -64,7 +68,15 @@ CREATE TABLE Has_Next_Of_Kin (
 	contactTelNo VARCHAR2(12),
 	bannerNo VARCHAR2(12),
 	relationship VARCHAR2(25),
-	PRIMARY KEY (name, contactTelNo, bannerNo)
+	PRIMARY KEY (name, contactTelNo, bannerNo),
+	CONSTRAINT fk_contact
+		FOREIGN KEY (name, contactTelNo) 
+		REFERENCES Next_Of_Kin(name, contactTelNo)
+		ON DELETE CASCADE
+	CONSTRAINT fk_student
+		FOREIGN KEY (bannerNo) 
+		REFERENCES Student(bannerNo)
+		ON DELETE RESTRICT
 );
 
 CREATE TABLE Staff (
@@ -93,7 +105,11 @@ CREATE TABLE Instructor (
 CREATE TABLE Course (
 	courseNo VARCHAR2(20) PRIMARY KEY,
 	courseTitle VARCHAR2(35),
-	instructor VARCHAR2(50)
+	instructor VARCHAR2(50),
+	CONSTRAINT fk_instructor
+		FOREIGN KEY (instructor) 
+		REFERENCES Instructor(email)
+		ON DELETE RESTRICT
 );
 
 CREATE TABLE HOR (
@@ -101,6 +117,10 @@ CREATE TABLE HOR (
 	addr VARCHAR2(50),
 	telNo VARCHAR2(12),
 	managedBy VARCHAR2(12)
+	CONSTRAINT fk_managedBy
+		FOREIGN KEY (managedBy) 
+		REFERENCES Staff(email)
+		ON DELETE RESTRICT
 );
 
 CREATE TABLE Flat (
@@ -113,22 +133,43 @@ CREATE TABLE Room (
 	rentRate NUMBER(4,2),
 	horName VARCHAR2(20) ,
 	horRoomNo NUMBER(4,0),
-	aptNo VARCHAR2(5)
+	aptNo VARCHAR2(5),
+	CONSTRAINT fk_hor
+		FOREIGN KEY (horName) 
+		REFERENCES HOR(name)
+		ON DELETE CASCADE,
+	CONSTRAINT fk_flat
+		FOREIGN KEY (aptNo) 
+		REFERENCES Flat(aptNo)
+		ON DELETE CASCADE
 );
 
 CREATE TABLE Leases (
 	leaseNo NUMBER PRIMARY KEY,
+	bannerNo VARCHAR2(12),
+	placeNo NUMBER,
 	duration NUMBER,
 	moveInDate DATE,
-	moveOutDate DATE
+	moveOutDate DATE,
+	CONSTRAINT fk_tenant
+		FOREIGN KEY (bannerNo) 
+		REFERENCES Student(bannerNo)
+		ON DELETE CASCADE
+	CONSTRAINT fk_room_rented
+		FOREIGN KEY (placeNo) 
+		REFERENCES Room(placeNo)
+		ON DELETE RESTRICT
 );
 
 CREATE TABLE Invoice (
 	invoiceNo NUMBER PRIMARY KEY,
 	leaseNo NUMBER,
 	semester NUMBER,
-	paymentDue DATE,
-	bannerNo VARCHAR2(12)
+	paymentDue DATE
+	CONSTRAINT fk_lease
+		FOREIGN KEY (leaseNo) 
+		REFERENCES Lease(leaseNo)
+		ON DELETE CASCADE
 );
 
 CREATE TABLE Inspects (
@@ -137,13 +178,29 @@ CREATE TABLE Inspects (
 	dateOfInspection NUMBER,
 	result VARCHAR2(10),
 	comments CLOB,
-	PRIMARY KEY (aptNo, staffNo, dateOfInspection)
+	PRIMARY KEY (aptNo, staffNo, dateOfInspection),
+	CONSTRAINT fk_inspector
+		FOREIGN KEY (staffNo) 
+		REFERENCES Staff(staffNo)
+		ON DELETE RESTRICT,
+	CONSTRAINT fk_apt_inspected
+		FOREIGN KEY (aptNo) 
+		REFERENCES Flat(aptNo)
+		ON DELETE CASCADE
 );
 
 CREATE TABLE Takes (
 	bannerNo VARCHAR2(12),
 	courseNo VARCHAR2(20),
-	PRIMARY KEY (bannerNo, courseNo)
+	PRIMARY KEY (bannerNo, courseNo),
+	CONSTRAINT fk_student_taking
+		FOREIGN KEY (bannerNo) 
+		REFERENCES Student(bannerNo)
+		ON DELETE CASCADE
+	CONSTRAINT fk_course_taken
+		FOREIGN KEY (courseNo) 
+		REFERENCES Course(courseNo)
+		ON DELETE CASCADE
 );
 
 CREATE OR REPLACE TRIGGER lease_number_trigger 
