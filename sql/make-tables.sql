@@ -163,12 +163,12 @@ CREATE TABLE Invoice (
 	paymentDue DATE,
 	CONSTRAINT fk_lease
 		FOREIGN KEY (leaseNo) 
-		REFERENCES Lease(leaseNo)
+		REFERENCES Leases(leaseNo)
 		ON DELETE CASCADE
 );
 
 CREATE TABLE Inspects (
-	aptNo NUMBER,
+	aptNo VARCHAR2(5),
 	staffNo VARCHAR2(12),
 	dateOfInspection NUMBER,
 	result VARCHAR2(10),
