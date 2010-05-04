@@ -123,9 +123,39 @@ CREATE TABLE Leases (
 	moveOutDate DATE
 );
 
+CREATE TABLE Invoice (
+	invoiceNo NUMBER PRIMARY KEY,
+	leaseNo NUMBER,
+	semester NUMBER,
+	paymentDue DATE,
+	bannerNo VARCHAR2(12)
+);
+
+CREATE TABLE Inspects (
+	aptNo NUMBER,
+	staffNo VARCHAR2(12),
+	dateOfInspection NUMBER,
+	result VARCHAR2(10),
+	comments CBLOB,
+	PRIMARY KEY (aptNo, staffNo, dateOfInspection)
+);
+
+CREATE TABLE Takes (
+	bannerNo VARCHAR2(12),
+	courseNo VARCHAR2(20),
+	PRIMARY KEY (bannerNo, courseNo)
+);
+
 CREATE OR REPLACE TRIGGER lease_number_trigger 
 BEFORE INSERT ON leases REFERENCING NEW AS NEW
 FOR EACH ROW BEGIN
 	SELECT lease_numbers.nextval INTO :NEW.leaseNo FROM dual;
+END;
+/
+
+CREATE OR REPLACE TRIGGER invoice_number_trigger 
+BEFORE INSERT ON invoice REFERENCING NEW AS NEW
+FOR EACH ROW BEGIN
+	SELECT invoice_numbers.nextval INTO :NEW.invoiceNo FROM dual;
 END;
 /
