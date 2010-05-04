@@ -199,14 +199,16 @@ CREATE TABLE Takes (
 
 CREATE OR REPLACE TRIGGER lease_number_trigger 
 BEFORE INSERT ON leases REFERENCING NEW AS NEW
-FOR EACH ROW BEGIN
-	SELECT lease_numbers.nextval INTO :NEW.leaseNo FROM dual;
-END;
+FOR EACH ROW WHEN (NEW.leaseNo IS NULL)
+	BEGIN
+		SELECT lease_numbers.nextval INTO :NEW.leaseNo FROM dual;
+	END;
 /
 
 CREATE OR REPLACE TRIGGER invoice_number_trigger 
 BEFORE INSERT ON invoice REFERENCING NEW AS NEW
-FOR EACH ROW BEGIN
-	SELECT invoice_numbers.nextval INTO :NEW.invoiceNo FROM dual;
-END;
+	FOR EACH ROW WHEN (NEW.invoiceNo IS NULL)
+	BEGIN
+		SELECT invoice_numbers.nextval INTO :NEW.invoiceNo FROM dual;
+	END;
 /
