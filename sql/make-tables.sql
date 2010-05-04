@@ -46,23 +46,25 @@ CREATE TABLE Advisor (
 	middleName VARCHAR2(20),
 	position VARCHAR2(20),
 	department VARCHAR2(20),
-	extension VARCHAR2(6,0),
+	extension VARCHAR2(6),
 	room VARCHAR2(8)
 );
 
 CREATE TABLE Next_Of_Kin (
-	name VARCHAR2(50) PRIMARY KEY,
-	contactTelNo VARCHAR2(12) PRIMARY KEY,
+	name VARCHAR2(50),
+	contactTelNo VARCHAR2(12),
 	city VARCHAR2(20),
 	street VARCHAR2(25),
-	postCode NUMBER(1,5)
+	postCode NUMBER(1,5),
+	PRIMARY KEY (name, contactTelNo)
 );
 
 CREATE TABLE Has_Next_Of_Kin (
-	name VARCHAR2(50) PRIMARY KEY,
-	contactTelNo VARCHAR2(12) PRIMARY KEY,
-	bannerNo VARCHAR2(12) PRIMARY KEY,
-	relationship VARCHAR2(25)
+	name VARCHAR2(50),
+	contactTelNo VARCHAR2(12),
+	bannerNo VARCHAR2(12),
+	relationship VARCHAR2(25),
+	PRIMARY KEY (name, contactTelNo, bannerNo)
 );
 
 CREATE TABLE Staff (
