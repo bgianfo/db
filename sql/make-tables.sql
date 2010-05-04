@@ -130,7 +130,7 @@ CREATE TABLE Flat (
 
 CREATE TABLE Room (
 	placeNo NUMBER(5,0) NOT NULL PRIMARY KEY,
-	rentRate NUMBER(4,2) NOT NULL,
+	rentRate NUMBER(6,2) NOT NULL,
 	horName VARCHAR2(20),
 	horRoomNo NUMBER(4,0),
 	aptNo VARCHAR2(5),
@@ -179,7 +179,7 @@ CREATE TABLE Invoice (
 CREATE TABLE Inspects (
 	aptNo VARCHAR2(5) NOT NULL,
 	staffNo VARCHAR2(12) NOT NULL,
-	dateOfInspection NUMBER NOT NULL,
+	dateOfInspection DATE NOT NULL,
 	result VARCHAR2(10) NOT NULL,
 	comments CLOB,
 	PRIMARY KEY (aptNo, staffNo, dateOfInspection),
