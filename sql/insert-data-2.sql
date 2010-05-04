@@ -1,7 +1,7 @@
 -- -----------------------------------------------------------------------------
 -- --------------- PORTED ADVISOR RECORDS --------------
 -- -----------------------------------------------------------------------------
-INSERT INTO Advisor (email, lastName, firstName, middleName, position, department, extension, room) VALUES ('ahughes@sample.edu', 'Hughes', 'Autin', 'A', 'Advisor', 'CompSci', '1001', '04-101A');
+INSERT INTO Advisor (email, lastName, firstName, middleName, position, department, extension, room) VALUES ('ahughes@sample.edu', 'Hughes', 'Austin', 'A', 'Advisor', 'CompSci', '1001', '04-101A');
 INSERT INTO Advisor (email, lastName, firstName, middleName, position, department, extension, room) VALUES ('hhart@sample.edu', 'Hart', 'Hailey', 'K', 'Advisor', 'CompSci', '2002', '04-102A');
 INSERT INTO Advisor (email, lastName, firstName, middleName, position, department, extension, room) VALUES ('baustin@sample.edu', 'Austin', 'Brayden', null, 'Advisor', 'IT', '3003', '04-103A');
 INSERT INTO Advisor (email, lastName, firstName, middleName, position, department, extension, room) VALUES ('agonzale@sample.edu', 'Gonzalez', 'Abigail', 'Ava', 'Advisor', 'Acting', '4004', '04-104A');
@@ -388,3 +388,23 @@ INSERT INTO Staff (staffNo, lastName, firstName, dob, gender, street, city, post
 INSERT INTO Staff (staffNo, lastName, firstName, dob, gender, street, city, postCode, email, position, location) VALUES ('R6097','Long', 'Jocelyn', to_date('1940-5-3', 'yyyy-mm-dd'), 'F','107 Willow Ln.', 'Gramercy', 70052, 'jsl7917@sample.edu', 'Janitor', 'Satellite office');
 INSERT INTO Staff (staffNo, lastName, firstName, dob, gender, street, city, postCode, email, position, location) VALUES ('R4310','Duncan', 'Faith', to_date('1944-9-9', 'yyyy-mm-dd'), 'F','2048 Jackson Ln.', 'Helm', 93627, 'fcd5008@sample.edu', 'Janitor', 'Main office');
 INSERT INTO Staff (staffNo, lastName, firstName, dob, gender, street, city, postCode, email, position, location) VALUES ('R5062','Lane', 'Joseph', to_date('1981-11-23', 'yyyy-mm-dd'), 'M','3368 Walnut Ln.', 'Kamuela', 96743, 'jsl4895@sample.edu', 'Manager', 'Satellite office');
+
+-- -----------------------------------------------------------------------------
+-- ------------------- PORTED HOR RECORDS ------------------
+-- -----------------------------------------------------------------------------
+INSERT INTO HOR (name, addr, telNo, managedBy) VALUES ("Grace Hall", "12 Campus Way", "123-456-7001", 'R5055');
+INSERT INTO HOR (name, addr, telNo, managedBy) VALUES ("White Hall", "14 Campus Way", "123-456-7201", 'R5055');
+INSERT INTO HOR (name, addr, telNo, managedBy) VALUES ("Anderson Hall", "16 Campus Way", "123-456-7401", 'R4223');
+INSERT INTO HOR (name, addr, telNo, managedBy) VALUES ("Sandson Hall", "18 Campus Way", "123-456-7601", 'R5062');
+
+-- -----------------------------------------------------------------------------
+-- ------------------- PORTED FLATS RECORDS ------------------
+-- -----------------------------------------------------------------------------
+INSERT INTO FLAT(aptNo, addr) VALUES (1, "110 Flat Rd.");
+INSERT INTO FLAT(aptNo, addr) VALUES (2, "120 Flat Rd.");
+INSERT INTO FLAT(aptNo, addr) VALUES (3, "130 Flat Rd.");
+INSERT INTO FLAT(aptNo, addr) VALUES (4, "140 Flat Rd.");
+INSERT INTO FLAT(aptNo, addr) VALUES (5, "150 Flat Rd.");
+INSERT INTO FLAT(aptNo, addr) VALUES (6, "160 Flat Rd.");
+INSERT INTO FLAT(aptNo, addr) VALUES (7, "170 Flat Rd.");
+INSERT INTO FLAT(aptNo, addr) VALUES (null, "180 Flat Rd.");
