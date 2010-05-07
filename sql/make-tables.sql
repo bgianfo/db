@@ -43,7 +43,7 @@ CREATE TABLE Student (
 	mobilePhone VARCHAR2(12),
 	major VARCHAR2(50),
 	minor VARCHAR2(50),
-	category VARCHAR2(20),
+	category VARCHAR2(20) NOT NULL,
 	nationality VARCHAR2(20),
 	specialNeeds CLOB, 
 	comments CLOB,
@@ -52,7 +52,9 @@ CREATE TABLE Student (
 		FOREIGN KEY (advisorEmail) 
 		REFERENCES Advisor(email),
 	CONSTRAINT check_student_gender
-		CHECK (gender IS NULL OR gender IN ('M', 'F') )
+		CHECK (gender IS NULL OR gender IN ('M', 'F') ),
+	CONSTRAINT check_student_category
+		CHECK (category IN ('Firstyear', 'Undergrad', 'Grad', 'Postgrad') )
 );
 
 CREATE TABLE Next_Of_Kin (
