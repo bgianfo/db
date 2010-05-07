@@ -79,6 +79,7 @@ CREATE TABLE Has_Next_Of_Kin (
 	CONSTRAINT fk_student
 		FOREIGN KEY (bannerNo) 
 		REFERENCES Student(bannerNo)
+		ON DELETE CASCADE
 );
 
 CREATE TABLE Staff (
